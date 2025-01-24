@@ -19,10 +19,6 @@ func SortCharacter(s string) {
 	consonantCount := make(map[string]int)
 	consonantOrder := []string{}
 
-	// temp := [][]int32{}
-	// var vowelCount int32 = 0
-
-	s = removeSpace(s)
 	s = strings.ToLower(s)
 
 	for _, char := range s {
@@ -36,9 +32,7 @@ func SortCharacter(s string) {
 			}
 			vowelOrder = append(vowelOrder, string(char))
 			vowelCount[string(char)]++
-			// if slices.Index(temp[], string(char)) != -1 {}
-			// vowelCount++
-			// temp = append(temp, []int32{char, vowelCount})
+
 			continue
 		}
 		if _, isOk := consonantCount[string(char)]; isOk {
@@ -54,16 +48,6 @@ func SortCharacter(s string) {
 
 	fmt.Println(">> Vowel:", vowel)
 	fmt.Println(">> Consonant:", consonant)
-}
-
-func removeSpace(s string) (result string) {
-	for _, char := range s {
-		if string(char) == " " {
-			continue
-		}
-		result += string(char)
-	}
-	return
 }
 
 func placingCharacters(order []string, count map[string]int) (res string) {

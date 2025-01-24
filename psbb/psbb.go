@@ -6,7 +6,7 @@ import (
 
 func MinimumBus(n int, members []int) {
 	passengerMap := make(map[int]int)
-	// resMap := make(map[int]bool)
+
 	var bus int
 
 	for _, v := range members {
